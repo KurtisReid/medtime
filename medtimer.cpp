@@ -11,6 +11,10 @@
 #include <iostream>
 using namespace std;
 
+void check_for_am_pm(int hour, int minute);
+void patch_removal(int hour, int minute);
+void patch_kick_in(int hour, int minute);
+void hour_check(int hour);
 int main ()
 {
 	int hour;
@@ -22,14 +26,40 @@ int main ()
 	cin >> hour;
 	cout << "please enter the minutes when patch was applied. " << endl;
 	cin >> minute;
-	new_hr = hour + 9;
 
-	if (new_hr > 12)
+	
+	
+	return 0;
+}
+
+void check_for_am_pm(int hour, int minute)
+{
+	
+	if (hour > 12)
 	{
 		//checking for am pm
-		new_hr = new_hr - 12;
+		hour -= 12;
 	}
-	cout << "You should remove patch at " << new_hr << ":" << minute << endl;
-	return 0;
+	
+}
+void patch_removal(int hour, int minute)
+{
+	hour += 9;
+	check_for_am_pm(hour, minute);
+	cout << "You should remove patch at " << hour << ":" << minute << endl;
+}
+
+void patch_kick_in(int hour, int minute)
+{
+	hour += 2;
+	cout << "The patch willkick in at " << hour << ":" << minute << endl;
+}
+
+void hour_check(int hour) 
+{
+	if (hour > 12 || hour < 0)
+	{
+		cout << "Hour is not valid" << endl;
+	}
 }
 
