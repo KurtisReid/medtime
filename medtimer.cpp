@@ -17,13 +17,7 @@ void patch_kick_in(int hour, int minute);
 void hour_check(int hour);
 
 
-struct time
-{
-	//data structure for time patch was applied
-	int hour;
-	int minute;
-	
-};
+
 
 
 
