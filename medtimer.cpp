@@ -15,21 +15,41 @@ void check_for_am_pm(int hour, int minute);
 void patch_removal(int hour, int minute);
 void patch_kick_in(int hour, int minute);
 void hour_check(int hour);
-int main ()
+
+
+struct time
 {
+	//data structure for time patch was applied
 	int hour;
 	int minute;
-	int new_hr;
+	
+};
+
+
+
+int main()
+{
+	time applied;//time patch was applied
+	
 	
 
-	cout << "please enter what hour patch was applied. " << endl;
-	cin >> hour;
-	cout << "please enter the minutes when patch was applied. " << endl;
-	cin >> minute;
+	
 
 	
 	
 	return 0;
+}
+
+time apply_patch(time applied)
+{
+	//User inputs hour and minute patch was applied. Input is stored in struct and returned.
+	//Pre: time structure has hour
+	//Post: 
+	cout << "please enter what hour patch was applied. " << endl;
+	cin >> applied.hour;
+	cout << "please enter the minutes when patch was applied. " << endl;
+	cin >> applied.minute;
+	return applied;
 }
 
 void check_for_am_pm(int hour, int minute)
